@@ -1,12 +1,14 @@
+
 class Solution {
     public int minMeetingRooms(int[][] intervals) {
         
         Arrays.sort(intervals, new Comparator<int[]>(){
             public int compare(int[] o1, int[] o2) {
+
                 return o1[0] - o2[0];    
             }
         });
-        
+                
         PriorityQueue<int[]> minHeap = new PriorityQueue<>(new Comparator<int[]>() {
             public int compare(int[] o1, int[] o2) {
                 return o1[1] - o2[1];
